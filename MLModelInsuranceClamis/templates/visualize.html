@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claims Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>ML Model Insurance Claims Visualization</h1>
+    <canvas id="claimsChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('claimsChart').getContext('2d');
+        const claimsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Approved', 'Denied', 'Pending'],
+                datasets: [{
+                    label: 'Claims',
+                    data: [{{ approved }}, {{ denied }}, {{ pending }}],
+                    backgroundColor: ['green', 'red', 'yellow']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

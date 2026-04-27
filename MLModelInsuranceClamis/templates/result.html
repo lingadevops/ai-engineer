@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .result { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        .approved { color: green; }
+        .denied { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Insurance Claim Prediction Result</h1>
+    <div class="result">
+        <p><strong>Claim ID:</strong> {{ claim_id }}</p>
+        <p><strong>Prediction:</strong> <span class="{{ 'approved' if prediction == 'Approved' else 'denied' }}">{{ prediction }}</span></p>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+    </div>
+    <a href="/">Submit Another Claim</a>
+</body>
+</html>
